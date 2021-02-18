@@ -10,6 +10,8 @@ app.get('/', (req, res)  => {
 
 // GET endpoint - get invoice from database [endpoint: GET '/invoices/<invoice_id>'] 
 
+// GET endpoint - get all invoices from database [endpoint: GET '/invoices/'] 
+
 // PATCH endpoint - update invoice in database [endpoint: PATCH '/invoices/<invoice_id>']
 
 // DELETE endpoint - delete invoice in database [endpoint: DELETE '/invoices/<invoice_id>']
