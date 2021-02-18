@@ -11,5 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "nock": "^13.0.7",
+    "supertest": "^6.1.3"
   }
 }
