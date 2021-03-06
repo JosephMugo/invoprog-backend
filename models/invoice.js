@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Invoice extends Model {
     /**
@@ -14,12 +12,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Invoice.init({
+    invoice_id: DataTypes.UUID,
     term: DataTypes.STRING,
+    date: DataTypes.DATE,
     from_name: DataTypes.STRING,
     from_email: DataTypes.STRING,
     from_address: DataTypes.STRING,
+    from_phone: DataTypes.NUMBER,
     client_name: DataTypes.STRING,
-    client_address: DataTypes.STRING
+    client_email: DataTypes.STRING,
+    client_address: DataTypes.STRING,
+    client_phone: DataTypes.NUMBER
   }, {
     sequelize,
     modelName: 'Invoice',
