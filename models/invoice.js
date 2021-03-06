@@ -18,11 +18,11 @@ module.exports = (sequelize, DataTypes) => {
     from_name: DataTypes.STRING,
     from_email: DataTypes.STRING,
     from_address: DataTypes.STRING,
-    from_phone: DataTypes.NUMBER,
+    from_phone: DataTypes.INTEGER,
     client_name: DataTypes.STRING,
     client_email: DataTypes.STRING,
     client_address: DataTypes.STRING,
-    client_phone: DataTypes.NUMBER
+    client_phone: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Invoice',

@@ -17,9 +17,12 @@ app.get('/', (req, res)  => {
 
 // DELETE endpoint - delete invoice in database [endpoint: DELETE '/invoices/<invoice_id>']
 
-db.sync({ force: true })
+db.sequelize.sync({ force: true })
 .then(() => {
     app.listen(port, () => {
-        console.log(`🚀listening on localhost: port:${port}🚀`)
+        console.log(`listening on localhost: port:${port}`)
     });
+})
+.catch((error) => {
+    console.log(error);
 });
