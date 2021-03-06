@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const db = require('./models/index');
 
 app.get('/', (req, res)  => {
     res.send('Initial Setup');
-})
+});
 
 // POST endpoint - add invoice to database [endpoint: POST '/invoices']
 
@@ -16,6 +17,9 @@ app.get('/', (req, res)  => {
 
 // DELETE endpoint - delete invoice in database [endpoint: DELETE '/invoices/<invoice_id>']
 
-app.listen(port, () => {
-    console.log(`🚀listening on localhost: port:${port}🚀`)
-})
+db.sync({ force: true })
+.then(() => {
+    app.listen(port, () => {
+        console.log(`🚀listening on localhost: port:${port}🚀`)
+    });
+});
