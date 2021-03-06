@@ -9,20 +9,57 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Invoice.hasMany(models.Order, {
+        foreignKey: 'invoice_id'
+      });
     }
   };
   Invoice.init({
-    invoice_id: DataTypes.UUID,
-    term: DataTypes.STRING,
-    date: DataTypes.DATE,
-    from_name: DataTypes.STRING,
-    from_email: DataTypes.STRING,
-    from_address: DataTypes.STRING,
-    from_phone: DataTypes.INTEGER,
-    client_name: DataTypes.STRING,
-    client_email: DataTypes.STRING,
-    client_address: DataTypes.STRING,
-    client_phone: DataTypes.INTEGER
+    invoice_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      primaryKey: true,
+    },
+    term: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    from_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    from_email: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    from_address: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    from_phone: {
+      type: DataTypes.INTEGER, 
+      allowNull: false
+    },
+    client_name: {
+      type: DataTypes.STRING, 
+      allowNull: false
+    },
+    client_email: {
+      type: DataTypes.STRING, 
+      allowNull: false
+    },
+    client_address: {
+      type: DataTypes.STRING, 
+      allowNull: false
+    },
+    client_phone: {
+      type: DataTypes.INTEGER, 
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Invoice',
