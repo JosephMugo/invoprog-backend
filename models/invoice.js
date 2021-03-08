@@ -28,19 +28,19 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false
     },
-    from_name: {
+    company_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    from_email: {
+    company_email: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    from_address: {
+    company_address: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    from_phone: {
+    company_phone: {
       type: DataTypes.INTEGER, 
       allowNull: false
     },
